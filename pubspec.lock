@@ -88,6 +88,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_gherkin:
+    dependency: "direct dev"
+    description:
+      name: flutter_gherkin
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.0"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -105,6 +112,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  gherkin:
+    dependency: transitive
+    description:
+      name: gherkin
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.8"
   integration_test:
     dependency: "direct dev"
     description: flutter
@@ -236,3 +250,4 @@ packages:
     version: "3.0.0"
 sdks:
   dart: ">=2.12.0 <3.0.0"
+  flutter: ">=2.0.0"
