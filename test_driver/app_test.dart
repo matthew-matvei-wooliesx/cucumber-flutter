@@ -2,6 +2,7 @@ import 'package:flutter_gherkin/flutter_gherkin.dart';
 import 'package:gherkin/gherkin.dart';
 
 import 'steps/counter_steps.dart';
+import 'steps/decrementing_steps.dart';
 import 'steps/incrementing_steps.dart';
 
 Future<void> main() async {
@@ -11,6 +12,7 @@ Future<void> main() async {
     ..stepDefinitions = [
       ...counterStepsDefinitions,
       ...incrementingStepsDefinitions,
+      ...decrementingStepsDefinitions,
     ]
     ..restartAppBetweenScenarios = true
     ..targetAppPath = "test_driver/app.dart"

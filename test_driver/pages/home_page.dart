@@ -15,7 +15,13 @@ class HomePage {
         _driver,
         _findIncrementer(),
       );
+
+  Future<void> decrementCounter() => FlutterDriverUtils.tap(
+        _driver,
+        _findDecrementer(),
+      );
 }
 
 SerializableFinder _findCounter() => find.byValueKey("counter");
 SerializableFinder _findIncrementer() => find.byValueKey("incrementer");
+SerializableFinder _findDecrementer() => find.byValueKey("decrementer");

@@ -3,7 +3,10 @@ import 'package:gherkin/gherkin.dart';
 
 import '../pages/home_page.dart';
 
-final counterStepsDefinitions = [_givenCounterStartsAtX];
+final counterStepsDefinitions = [
+  _givenCounterStartsAtX,
+  _thenCounterDisplaysX,
+];
 
 final StepDefinitionGeneric _givenCounterStartsAtX =
     given1<String, FlutterWorld>(
@@ -27,5 +30,16 @@ final StepDefinitionGeneric _givenCounterStartsAtX =
 
       current++;
     }
+  },
+);
+
+final StepDefinitionGeneric _thenCounterDisplaysX = then1<String, FlutterWorld>(
+  "the counter displays {String}",
+  (counterValue, context) async {
+    final homePage = HomePage(driver: context.world.driver!);
+
+    final actualValue = await homePage.getCounterValue();
+
+    assert(actualValue == counterValue);
   },
 );
