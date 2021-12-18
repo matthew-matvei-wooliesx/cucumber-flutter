@@ -40,6 +40,6 @@ final StepDefinitionGeneric _thenCounterDisplaysX = then1<String, FlutterWorld>(
 
     final actualValue = await homePage.getCounterValue();
 
-    assert(actualValue == counterValue);
+    context.expectMatch(actualValue, counterValue);
   },
 );
