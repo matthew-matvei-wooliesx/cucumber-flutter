@@ -6,7 +6,6 @@ Feature: decrementing
     When the user decrements the counter 10 times
     Then the counter displays "0"
 
-  @notYetImplemented
   Scenario: User cannot decrement less than 0
     Given the counter starts at "0"
     When the user decrements the counter 1 time
