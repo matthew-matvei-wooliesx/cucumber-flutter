@@ -13,7 +13,8 @@ Future<void> main() async {
       ...incrementingStepsDefinitions,
     ]
     ..restartAppBetweenScenarios = true
-    ..targetAppPath = "test_driver/app.dart";
+    ..targetAppPath = "test_driver/app.dart"
+    ..tagExpression = "not @notYetImplemented";
 
   await GherkinRunner().execute(config);
 }
