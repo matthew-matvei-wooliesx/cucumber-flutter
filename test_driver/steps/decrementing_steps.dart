@@ -6,7 +6,7 @@ import '../pages/home_page.dart';
 final decrementingStepsDefinitions = [_decrementCounterNTimes];
 
 final StepDefinitionGeneric _decrementCounterNTimes = when1<int, FlutterWorld>(
-  "the user decrements the counter {int} times",
+  "the user decrements the counter {int} time(s)",
   (count, context) async {
     final homePage = HomePage(driver: context.world.driver!);
 
