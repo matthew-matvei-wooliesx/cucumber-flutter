@@ -61,6 +61,12 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void _decrementCounter() {
+    setState(() {
+      _counter--;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -106,12 +112,34 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        key: const Key("incrementer"),
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      floatingActionButton: Stack(
+        children: <Widget>[
+          Positioned(
+            bottom: 10,
+            right: 10,
+            child: FloatingActionButton(
+              key: const Key("incrementer"),
+              onPressed: _incrementCounter,
+              tooltip: "Increment",
+              child: const Icon(Icons.add),
+              heroTag: "Increment",
+            ),
+          ),
+          Positioned(
+              bottom: 90,
+              right: 10,
+              child: FloatingActionButton(
+                key: const Key("decrementer"),
+                onPressed: _decrementCounter,
+                tooltip: "Decrement",
+                child: const Text(
+                  "-",
+                  style: TextStyle(fontSize: 32),
+                ),
+                heroTag: "Decrement",
+              ))
+        ],
+      ),
     );
   }
 }
